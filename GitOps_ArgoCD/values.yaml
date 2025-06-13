@@ -1,0 +1,26 @@
+# helm upgrade --install argocd argo/argo-cd --values ./values.yaml -n argocd --version 7.7.3
+
+# kubectl port-forward service/argocd-server -n argocd 8080:443
+# kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+redis-ha:
+  autoscaling:
+  enable: true
+  minReplicas: 2
+
+controller:
+  replicas: 1
+
+server:
+  autoscaling:
+    enable: true
+    minReplicas: 2
+
+repoServer:
+  autoscaling:
+    enable: true
+    minReplicas: 2
+
+applicationSet:
+  replicas: 2
+
