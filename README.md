@@ -2,7 +2,7 @@
 Curso criado por- Fabricio Veronez
 
 # Instalando o argocd sem HA
-raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
+  raw.githubusercontent.com/argoproj/argo-cd/refs/heads/master/manifests/install.yaml
 
 # Instalando argocd HA
   helm upgrade --install argocd argo/argo-cd --values ./values.yaml -n argocd --version 7.7.3
